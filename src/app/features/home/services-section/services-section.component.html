@@ -1,0 +1,110 @@
+<section class="py-20 bg-gray-100" id="services">
+
+  <div class="max-w-7xl mx-auto px-6 text-center relative">
+
+    <!-- Title -->
+    <div class="w-full text-center mb-8">
+      <h2 class="text-3xl font-bold inline-block pb-2 border-b-4 border-red-500">
+        What I Do
+      </h2>
+    </div>
+
+
+    <!-- Arrows (Desktop only) -->
+    <div *ngIf="!isMobile" class="flex justify-center gap-4 mb-8">
+
+      <button
+        (click)="previousSlide()"
+        [disabled]="currentIndex === 0"
+        class="cursor-pointer w-14 h-14 rounded-full border-2 border-gray-300 flex items-center justify-center transition hover:border-red-500 hover:text-red-500 disabled:opacity-40">
+
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+
+      </button>
+
+
+      <button
+        (click)="nextSlide()"
+        [disabled]="currentIndex >= services.length - itemsPerView"
+        class="cursor-pointer w-14 h-14 rounded-full border-2 border-gray-300 flex items-center justify-center transition hover:border-red-500 hover:text-red-500 disabled:opacity-40">
+
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+
+      </button>
+
+    </div>
+
+
+    <!-- Mobile Layout -->
+    <div *ngIf="isMobile" class="grid grid-cols-1 gap-6">
+
+      <div
+        *ngFor="let service of services"
+        class="bg-white p-6 rounded-2xl shadow-lg cursor-pointer"
+        (click)="contactWhatsApp(service)"
+      >
+
+        <img
+          [src]="service.image"
+          alt=""
+          class="w-full h-48 object-contain mb-4"
+        >
+
+        <h3 class="text-xl font-semibold mb-2">
+          {{ service.title }}
+        </h3>
+
+        <p class="text-gray-600">
+          {{ service.description }}
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- Desktop Slider -->
+    <div *ngIf="!isMobile" class="overflow-hidden">
+
+      <div
+        class="flex transition-transform duration-500 ease-in-out"
+        [style.transform]="transformValue"
+      >
+
+        <div
+          *ngFor="let service of services"
+          class="w-1/3 flex-shrink-0 p-4 cursor-pointer"
+          (click)="contactWhatsApp(service)"
+        >
+
+          <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition">
+
+            <img
+              [src]="service.image"
+              alt=""
+              class="w-full h-56 object-contain mb-4"
+            >
+
+            <h3 class="text-xl font-semibold mb-2">
+              {{ service.title }}
+            </h3>
+
+            <p class="text-gray-600">
+              {{ service.description }}
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

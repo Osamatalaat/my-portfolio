@@ -1,0 +1,198 @@
+/* ============================= */
+/* HERO SHAPES */
+/* ============================= */
+
+.hero-left{
+  clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
+  transform: translateX(-100%);
+  animation: slideLeft 1.5s forwards;
+}
+
+.hero-right{
+  clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%);
+  transform: translateX(100%);
+  animation: slideRight 1.5s forwards;
+}
+
+
+/* ============================= */
+/* HERO CONTENT */
+/* ============================= */
+
+.hero-content{
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 1.6s;
+}
+
+
+/* ============================= */
+/* ANIMATIONS */
+/* ============================= */
+
+@keyframes slideLeft{
+  to{
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight{
+  to{
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn{
+  to{
+    opacity: 1;
+  }
+}
+
+
+/* ============================= */
+/* TYPEWRITER */
+/* ============================= */
+
+#typewriter{
+  animation: blink-cursor 0.7s steps(1) infinite;
+}
+
+@keyframes blink-cursor{
+  0%,50%{
+    border-color:white;
+  }
+  51%,100%{
+    border-color:transparent;
+  }
+}
+
+
+/* ============================= */
+/* TITLE FONT */
+/* ============================= */
+
+h1{
+  font-family: 'toony-line', sans-serif;
+}
+
+
+/* ============================= */
+/* SOCIAL ICONS */
+/* ============================= */
+
+.social-icon{
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  background:var(--color-gray);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--color-primary);
+  font-size:18px;
+  transition:all 0.3s ease;
+}
+
+.social-icon:hover{
+  transform:translateY(-3px);
+}
+
+/* SOCIAL COLORS */
+
+.whatsApp:hover{
+  color:var(--color-whatsapp-green);
+  box-shadow:0 0 15px var(--color-whatsapp-green);
+}
+
+.linkedin:hover{
+  color:var(--color-linkedin-blue);
+  box-shadow:0 0 15px var(--color-linkedin-blue);
+}
+
+.github:hover{
+  color:var(--color-github-black);
+  box-shadow:0 0 15px var(--color-github-black);
+}
+
+.gmail:hover{
+  color:var(--color-gmail-red);
+  box-shadow:0 0 15px var(--color-gmail-red);
+}
+
+
+/* ============================= */
+/* SCROLL DOWN ICON */
+/* ============================= */
+
+.scroll-down{
+  position:absolute;
+  bottom:50%;
+  left:54%;
+  transform:translateX(-50%);
+}
+
+.scroll-down a{
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  background:var(--color-gray);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-size:22px;
+  transition:all 0.3s ease;
+  animation:bounce 2s infinite;
+}
+
+.scroll-down a:hover{
+  color:#ef4444;
+  box-shadow:0 0 15px #ef4444;
+}
+
+@keyframes bounce{
+  0%,20%,50%,80%,100%{
+    transform:translateY(0);
+  }
+  40%{
+    transform:translateY(-10px);
+  }
+  60%{
+    transform:translateY(-5px);
+  }
+}
+
+
+/* ============================= */
+/* MOBILE RESPONSIVE */
+/* ============================= */
+
+@media (max-width:1100px){
+
+  /* shapes close together */
+
+  .hero-left{
+    width:100%;
+    clip-path: polygon(0 0,100% 0,100% 60%,0 100%);
+  }
+
+  .hero-right{
+    width:100%;
+    clip-path: polygon(0 60%,100% 0,100% 100%,0 100%);
+  }
+
+  /* social icons smaller */
+
+  .social-icon{
+    width:40px;
+    height:40px;
+    font-size:16px;
+  }
+
+  /* hide scroll arrow on mobile */
+
+  .scroll-down{
+    display:none;
+  }
+
+}

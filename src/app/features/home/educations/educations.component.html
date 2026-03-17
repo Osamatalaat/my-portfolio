@@ -1,0 +1,58 @@
+<section id="education" class="py-24 bg-gray-100">
+
+  <div class="max-w-6xl mx-auto px-6 text-center">
+
+      <div class="w-full text-center mb-8">
+        <h2
+          class="text-3xl font-bold inline-block pb-2 border-b-4 border-red-500"
+        >
+          Educations
+        </h2>
+      </div>
+
+    <!-- Timeline -->
+    <div #timeline class="relative timeline-container">
+
+      <!-- Base Line -->
+      <div class="timeline-line"></div>
+
+      <!-- Animated Line -->
+      <div class="timeline-progress"></div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 relative">
+
+        <div
+          *ngFor="let item of educationList , let i = index"
+          class="flex flex-col items-center group"
+        >
+
+          <!-- Year -->
+          <p class="text-lg font-semibold mb-3">
+            {{ item.year }}
+          </p>
+
+          <!-- Circle -->
+          <div class="timeline-dot bottom-4"></div>
+
+          <!-- Card -->
+          <div class="timeline-card">
+
+            <h3 class="font-semibold mb-2">
+              {{ item.title }}
+            </h3>
+
+            <p class="text-sm text-gray-600">
+              {{ item.description }}
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

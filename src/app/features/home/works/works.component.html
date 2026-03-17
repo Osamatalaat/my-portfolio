@@ -1,0 +1,57 @@
+<section id="works" class="bg-gray-100 py-16">
+  <div class="max-w-7xl mx-auto px-6 md:px-12">
+    <div class="w-full text-center mb-8">
+      <h2 class="text-3xl font-bold inline-block pb-2 border-b-4 border-red-500">
+        Works
+      </h2>
+    </div>
+
+    <div class="grid gap-8 md:grid-cols-3">
+      <div *ngFor="let work of displayedWorks" class="cursor-pointer bg-white rounded-lg shadow-xl overflow-hidden hover:scale-105 transform transition-all duration-300 relative">
+        <img [src]="work.picture" [alt]="work.title" class="w-full h-48 object-cover">
+
+        <!-- أيقونات الروابط -->
+        <div class="absolute top-4 right-4 flex gap-2">
+
+  <!-- GitHub -->
+  <a [href]="work.githubLink" target="_blank"
+     class="bg-white p-2 rounded-full shadow hover:bg-gray-100 transition">
+    <i class="fab fa-github text-lg"></i>
+  </a>
+
+  <!-- Live Website -->
+  <a *ngIf="work.liveLink"
+     [href]="work.liveLink"
+     target="_blank"
+     class="bg-white p-2 rounded-full shadow hover:bg-gray-100 transition">
+    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+  </a>
+
+  <!-- Video -->
+  <a *ngIf="work.videoLink"
+     [href]="work.videoLink"
+     target="_blank"
+     class="bg-white p-2 rounded-full shadow hover:bg-gray-100 transition">
+    <i class="fa-solid fa-play"></i>
+  </a>
+
+</div>
+
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">{{ work.title }}</h3>
+          <p class="text-gray-700 mb-4">{{ work.description }}</p>
+          <div class="flex flex-wrap gap-2">
+            <span *ngFor="let tech of work.technologies" class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">{{ tech }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- زر More / Less -->
+    <div *ngIf="works.length > 3" class="text-center mt-8">
+      <button (click)="toggleShowAll()" class="px-6 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition cursor-pointer">
+        {{ showAll ? 'Less' : 'More' }}
+      </button>
+    </div>
+  </div>
+</section>

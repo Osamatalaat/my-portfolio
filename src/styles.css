@@ -1,1 +1,60 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+@theme {
+  /* Primary Backgrounds */
+--color-primary: #000c24;
+--color-gray: #928a97;
+/* Accent Colors */
+--color-gmail-red: #ea4335;
+--color-linkedin-blue: #0077b5;
+--color-github-black: #333;
+--color-whatsapp-green: #25D366;
+--color-light-gold: #E2C49A;
+--color-sand-brown: #A9825A;
+--color-gold-highlight: #C9A86B;
+--color-olive-green: #7F8B52;
+/* Text & Utility */
+--color-white: #FFFFFF;
+--color-dark-gray: #4A4A4A;
+}
+html {
+  scroll-behavior: smooth;
+}
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('/assets/fonts/CHERI___.TTF') format('woff2'),
+       url('/assets/fonts/CHERL___.TTF') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Roblox';
+  src: url('/assets/fonts/RobloxFont-Regular.ttf') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'CHICKEN-Pie';
+  src: url('/assets/fonts/CHICKEN-Pie.ttf') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Simply-Olive';
+  src: url('/assets/fonts/Simply-Olive-DEMO.ttf') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'toony-line';
+  src: url('/assets/fonts/toony-line.otf') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
