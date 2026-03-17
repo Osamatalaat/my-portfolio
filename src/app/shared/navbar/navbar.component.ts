@@ -11,7 +11,7 @@ export class NavbarComponent {
   menuItems = [
     { name: 'Home', link: '#hero' },
     { name: 'About', link: '#about' },
-    { name: 'Education', link: '#education' },
+    { name: 'Educations', link: '#education' },
     { name: 'Skills', link: '#skills' },
     { name: 'Works', link: '#works' },
     { name: 'Services', link: '#services' },
