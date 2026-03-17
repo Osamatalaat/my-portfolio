@@ -48,9 +48,9 @@ export class WorksComponent {
       technologies: ['HTML', 'CSS', 'Angular','TypeScript', 'TailwindCSS'],
       picture: 'assets/Images/profile.png',
       githubLink: 'https://github.com/osama/portfolio',
-      liveLink: 'https://portfolio.osama.com',
+      liveLink: 'https://osamatallat-portfolio.vercel.app/',
     },
-  
+
   ];
 
   showAll: boolean = false; // هل نعرض كل الكروت؟
